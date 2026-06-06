@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux"
 import { Link } from "react-router-dom";
+import { addItem } from "../redux/cartSlice";
 
 function ProductItem({ product }) {
 
@@ -12,7 +13,11 @@ function ProductItem({ product }) {
     return (
         <div>
 
-            <img />
+            <img 
+                src={product.thumbnail}
+                alt={product.title}
+                loading="lazy"
+            />
 
             <h3>
                 {product.title}
