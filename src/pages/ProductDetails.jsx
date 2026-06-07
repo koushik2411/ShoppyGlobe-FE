@@ -1,106 +1,97 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux';
-import { addItem } from '../redux/cartSlice'
-import { Link, useParams } from 'react-router-dom'
-import Header from '../components/Header';
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../redux/cartSlice";
+import { Link, useParams } from "react-router-dom";
+import Header from "../components/Header";
 
 function ProductDetails() {
+  const { id } = useParams();
 
-    const {id} = useParams();
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-    const [product, setProduct] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState("");
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        setLoading(true);
 
-    useEffect(() => {
-        const fetchProduct = async () => {
-            try {
-                setLoading(true);
+        const response = await fetch(`https://dummyjson.com/products/${id}`);
 
-                const response = await fetch(`https://dummyjson.com/products/${id}`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch product details");
+        }
 
-                if (!response.ok) {
-                    throw new Error("Failed to fetch product details");
-                }
+        const data = await response.json();
 
-                const data = await response.json();
-
-                setProduct(data);
-            } catch(err) {
-                setError(err.message);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchProduct();
-    }, [id]);
-
-    const handleAddItem = () => {
-        dispatch(addItem(product));
+        setProduct(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
     };
 
-    if (loading)
-        return <h2>Loading product...</h2>;
+    fetchProduct();
+  }, [id]);
 
-    if (error)
-        return <h2>Error: {error}</h2>;
+  const handleAddItem = () => {
+    dispatch(addItem(product));
+  };
+
+  if (loading) return <h2>Loading product...</h2>;
+
+  if (error) return <h2>Error: {error}</h2>;
 
   return (
     <>
-        <Header/>
+      <Header />
 
-        <div>
+      <section className="productDetailsContainer">
 
-            <img 
-                src={product.thumbnail}
-                alt={product.title}
-                loading='lazy'
-            />
+        <h2 className="secHeader">Product Details</h2>
 
-            <div>
+        <div className="productDetails">
+          <img src={product.thumbnail} alt={product.title} loading="lazy" />
 
-                <h2>
-                    {product.title}
-                </h2>
+          <div className="textDiv">
+            <h2 className="productTitle">{product.title}</h2>
 
-                <p>
-                    {product.description}
-                </p>
+            <p>{product.description}</p>
 
-                <h3>
-                    ₹ {Math.round(product.price * 85)}
-                </h3>
+            <h3>
+              <span className="semibold">Price:</span> ₹{" "}
+              {Math.round(product.price * 85)} /-
+            </h3>
 
-                <p>
-                    Rating: {product.rating}
-                </p>
+            <p>
+              <span className="semibold">Rating:</span> {product.rating}
+            </p>
 
-                <p>
-                    Stock: {product.stock}
-                </p>
+            <p>
+              <span className="semibold">Stock:</span> {product.stock}
+            </p>
 
-                <p>
-                    Brand: {product.brand}
-                </p>
+            <p>
+              <span className="semibold">Brand:</span> {product.brand}
+            </p>
 
-                <button 
-                  onClick={handleAddItem}
-                >
-                    Add to cart
-                </button>
+            <div className="btnDiv">
+              <button onClick={handleAddItem} className="addToCartBtn">
+                Add to cart
+              </button>
 
-                <Link to="/">
-                    <button>
-                        Back to products
-                    </button>
-                </Link>
+              <Link to="/">
+                <button className="backBtn">Back to products</button>
+              </Link>
             </div>
+          </div>
         </div>
+      </section>
     </>
-  )
+  );
 }
 
-export default ProductDetails
+export default ProductDetails;

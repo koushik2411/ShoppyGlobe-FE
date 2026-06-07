@@ -6,7 +6,7 @@
 
 /* Common for all*/
 button {
-    padding: 4px 8px;
+    padding: 4px 10px;
     border-radius: 6px;
 }
 
@@ -18,12 +18,19 @@ button:active {
     scale: 0.96;
 }
 
+.backBtn {
+    background: linear-gradient(135deg, var(--color-amber-300), var(--color-amber-500));
+}
+
 .secHeader {
     font-size: 20px;
     font-weight: 700;
     border-bottom: 2px solid var(--color-slate-500);
 }
 
+.semibold {
+    font-weight: 500;
+}
 /*------------------------------------------------*/
 
 /* ----- HEADER ----- */
@@ -45,14 +52,14 @@ header {
 nav {
     position: relative;
     display: flex;
-    gap: 24px;
+    gap: 10px;
 }
 
 .nav-links {
     padding-right: 8px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
 }
 
 .cartCount {
@@ -75,16 +82,18 @@ nav {
 /* ----- SEARCH BAR ----- */
 .searchBar {
     width: 100%;
+    padding: 20px 12px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .searchInput {
+    width: 80%;
     padding: 4px 12px;
     border: 1px solid var(--color-slate-200);
-    background: var(--color-blue-100);
-    border-radius: 24px;
+    background: var(--color-slate-200);
+    border-radius: 8px;
     outline: none;
     color: var(--color-slate-800);
 }
@@ -114,7 +123,8 @@ nav {
 }
 
 .productTitle {
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .cardBtns {
@@ -138,6 +148,7 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    color: var(--color-slate-800);
 }
 
 .productList {
@@ -147,17 +158,54 @@ nav {
     gap: 12px;
 }
 
-/*------------------------------------------------*/
-/* ----- HOME PAGE ----- */
+/*-----------------------------------------------
 
 /* ----- PRODUCT DETAILS PAGE ----- */
+.productDetailsContainer {
+    padding: 12px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: var(--color-slate-800);
+}
 
+.productDetails {
+    margin: 15px;
+    padding: 20px 12px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background:  linear-gradient(180deg, var(--color-slate-50), var(--color-slate-200));
+    box-shadow: 0px 2px 10px var(--color-slate-400);
+}
 
+.textDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.btnDiv {
+    padding: 8px 0;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
 /*------------------------------------------------*/
 /* ----- MEDIA QUERIES ----- */
 
 /* SMALL SCREEN */
-
-/* MEDIUM SCREEN */
-
-/* LARGE SCREEN */
+@media (max-width: 600px) {
+    .productList {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    }
+    .btnDiv {
+        display: flex;
+        flex-direction: column;
+    }
+}

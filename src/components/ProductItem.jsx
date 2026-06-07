@@ -27,7 +27,7 @@ function ProductItem({ product }) {
                 ₹ {Math.round(product.price * 85)} /-
             </p>
 
-            <div className="cardBtns">
+            <div className="btnDiv">
                 <Link to={`/product/${product.id}`}>
                     <button className="viewBtn">View Details</button>
                 </Link>
