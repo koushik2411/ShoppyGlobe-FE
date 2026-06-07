@@ -75,7 +75,7 @@ function ProductDetails() {
             </p>
 
             <p>
-              <span className="semibold">Brand:</span> {product.brand}
+              <span className="semibold">Brand:</span> {product.brand || "N/A"}
             </p>
 
             <div className="btnDiv">

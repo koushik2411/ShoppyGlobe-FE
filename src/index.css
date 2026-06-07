@@ -102,7 +102,71 @@ nav {
 }
 
 /* ----- LOADER ----- */
-/* ----- CARD ITEM----- */
+/* ----- CART ITEM----- */
+.cartItem {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, var(--color-slate-50), var(--color-slate-200));
+}
+
+.cartItem img {
+    width: 20%;
+    height: fit-content;
+}
+
+.cartText {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cartItemDiv2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cartBtns {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.incBtn {
+    height: 32px;
+    width: 32px;
+    background: linear-gradient(180deg, var(--color-slate-200), var(--color-slate-300));
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.decBtn {
+    height: 32px;
+    width: 32px;
+    background: linear-gradient(180deg, var(--color-slate-200), var(--color-slate-300));
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.qty {
+    height: 32px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid var(--color-slate-300);
+    border-top: 2px solid var(--color-slate-200);
+}
+
+.removeBtn {
+    background: linear-gradient(135deg, var(--color-red-500), var(--color-red-600));
+    color: white;
+}
+
 /* ----- PRODUCT ITEM----- */
 .productItemCard {
     padding: 12px;
@@ -218,6 +282,32 @@ nav {
     font-weight: 500;
     font-size: 32px;
     color: var(--color-red-600);
+}
+
+/* ----- CART ----- */
+.cartContainer {
+    padding: 12px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: var(--color-slate-800);
+}
+
+.emptyCart {
+    color: var(--color-red-600);
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.totalAmount {
+    padding: 20px 0;
+    font-weight: 700;
+    font-size: 20px;
+}
+.checkout {
+    background: linear-gradient(180deg, var(--color-blue-400), var(--color-blue-500));
+    color: white;
 }
 
 /*------------------------------------------------*/

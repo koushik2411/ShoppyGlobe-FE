@@ -18,16 +18,16 @@ function Cart() {
     <>
         <Header/>
 
-        <div>
+        <div className='cartContainer'>
             
-            <h2>Cart</h2>
+            <h2 className='secHeader'>Cart</h2>
 
             {cartItems.length === 0 ? (
-                <h3>
+                <h3 className='emptyCart'>
                     Cart is Empty
                 </h3>
             ) : (
-                <div>
+                <div className='cartList'>
                     {cartItems.map((item) => (
                         <CartItem 
                             key={item.id}
@@ -35,12 +35,12 @@ function Cart() {
                         />
                     ))}
 
-                    <h2>
-                        Total: ₹ {""}{Math.round(totalAmount)}
+                    <h2 className='totalAmount'>
+                        Total: ₹ {""}{Math.round(totalAmount)} /-
                     </h2>
 
                     <Link to="/checkout">
-                        <button>
+                        <button className='checkout'>
                             Proceed to Checkout
                         </button>
                     </Link>

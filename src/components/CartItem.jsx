@@ -1,62 +1,52 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import { increaseQuantity, decreaseQuantity, removeItem } from '../redux/cartSlice'
+import React from "react";
+import { useDispatch } from "react-redux";
+import {
+  increaseQuantity,
+  decreaseQuantity,
+  removeItem,
+} from "../redux/cartSlice";
 
 function CartItem({ item }) {
-
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className="cartItem">
+      <img src={item.thumbnail} alt={item.title} />
 
-        <img 
-            src={item.thumbnail}
-            alt={item.title}
-        />
+      <div className="cartText">
+        <h3 className="productTitle">{item.title}</h3>
 
-        <div>
+        <p>₹ {Math.round(item.price * 85)}</p>
 
-            <h3>
-                {item.title}
-            </h3>
+        <div className="cartItemDiv2">
+          <div className="cartBtns">
+            <button
+              onClick={() => dispatch(decreaseQuantity(item.id))}
+              className="decBtn"
+            >
+              -
+            </button>
 
-            <p>
-                ₹ {Math.round(item.price * 85)}
-            </p>
-
-            <div>
-
-                <button
-                  onClick={() => dispatch(
-                    decreaseQuantity(item.id)
-                  )}
-                >
-                    -
-                </button>
-
-                <span>
-                    {item.quantity}
-                </span>
-
-                <button
-                  onClick={() => dispatch(
-                    increaseQuantity(item.id)
-                  )}
-                >
-                    +
-                </button>
-            </div>
+            <span className="qty">{item.quantity}</span>
 
             <button
-              onClick={() => dispatch(
-                removeItem(item.id)
-              )}
+              onClick={() => dispatch(increaseQuantity(item.id))}
+              className="incBtn"
             >
-                Remove
+              +
             </button>
+          </div>
+
+          <button
+            onClick={() => dispatch(removeItem(item.id))}
+            className="removeBtn"
+          >
+            Remove
+          </button>
         </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default CartItem
+export default CartItem;
