@@ -10,7 +10,7 @@ const ProductDetail = lazy(() => import("../pages/ProductDetails"));
 
 const Cart = lazy(() => import("../pages/Cart"));
 
-const Checkout = lazy(() => import("../pages/Checkout"));
+const CheckOut = lazy(() => import("../pages/CheckOut"));
 
 const NotFound = lazy(() => import("../pages/NotFound"));
 
@@ -46,7 +46,7 @@ export const appRouter = createBrowserRouter([
     path: "/checkout",
     element: (
       <Suspense fallback={<Loader />}>
-        <Checkout />
+        <CheckOut />
       </Suspense>
     ),
   },
