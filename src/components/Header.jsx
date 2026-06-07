@@ -1,3 +1,4 @@
+import { FaHome, FaShoppingCart } from "react-icons/fa";
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom";
 
@@ -12,16 +13,20 @@ function Header() {
     );
 
     return (
-        <header className="">
+        <header className="header">
 
-            <h1>ShoppyGlobe</h1>
+            <h1 className="logo">ShoppyGlobe</h1>
 
             <nav>
 
-                <Link to="/">Home</Link>
+                <Link to="/" className="nav-links">
+                    <FaHome/>
+                    Home
+                </Link>
 
-                <Link to="/cart">
-                    Cart ({totalItems})
+                <Link to="/cart" className="nav-links">
+                    <FaShoppingCart/>
+                    Cart <span className="cartCount">{totalItems}</span>
                 </Link>
             </nav>
         </header>

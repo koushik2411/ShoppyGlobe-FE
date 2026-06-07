@@ -1,1 +1,72 @@
 @import "tailwindcss";
+/*------------------------------------------------*/
+/* Common for all*/
+/*------------------------------------------------*/
+
+/* ----- HEADER ----- */
+header {
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(180deg, var(--color-blue-500), var(--color-blue-600));
+    color: var(--color-white);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    border-bottom: 2px solid white;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links {
+    padding-right: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cartCount {
+    padding: 2px;
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    top: -10px;
+    right: 32px;
+    border-radius: 50%;
+    background: var(--color-red-600);
+    color: var(--color-red-50);
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ----- SEARCH BAR ----- */
+/* ----- LOADER ----- */
+/* ----- CARD ITEM----- */
+/* ----- PRODUCT ITEM----- */
+/* ----- PRODUCT LIST ----- */
+
+/*------------------------------------------------*/
+/* ----- HOME PAGE ----- */
+
+/* ----- PRODUCT DETAILS PAGE ----- */
+
+
+/*------------------------------------------------*/
+/* ----- MEDIA QUERIES ----- */
+
+/* SMALL SCREEN */
+
+/* MEDIUM SCREEN */
+
+/* LARGE SCREEN */
