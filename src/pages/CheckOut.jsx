@@ -16,7 +16,6 @@ function CheckOut() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
-  const [message, setMessage] = useState("");
 
   const totalAmount = cartItems.reduce(
     (total, item) => total + item.price * item.quantity * 85, 0
@@ -25,7 +24,7 @@ function CheckOut() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setMessage("Order placed successfully");
+    alert("Order placed successfully");
 
     dispatch(clearCart());
 
@@ -38,9 +37,9 @@ function CheckOut() {
     <>
       <Header/>
 
-      <div>
+      <div className='checkoutContainer'>
 
-        <h2>Checkout</h2>
+        <h2 className='secHeader'>Checkout</h2>
 
         <form onSubmit={handleSubmit}>
 
@@ -57,14 +56,15 @@ function CheckOut() {
             placeholder='Email'
             required
             value={email}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <textarea
+          rows={3}
             placeholder='Address'
             required
             value={address}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setAddress(e.target.value)}
           />
 
           <button type='submit'>
@@ -74,7 +74,7 @@ function CheckOut() {
 
         <div>
           
-          <h3>Order Summary</h3>
+          <h3 className='semibold'>Order Summary</h3>
 
           {cartItems.map((item) => (
             <div>
@@ -88,10 +88,6 @@ function CheckOut() {
             Total: ₹ {Math.round(totalAmount)}
           </h3>
         </div>
-
-        {message && (
-          <h3>{message}</h3>
-        )}
       </div>
     </>
   )

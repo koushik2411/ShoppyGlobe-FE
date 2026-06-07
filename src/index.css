@@ -310,6 +310,32 @@ nav {
     color: white;
 }
 
+/* ----- CHECKOUT PAGE ----- */
+
+form {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+form input {
+    padding: 8px 12px;
+    width: 80%;
+    border: 2px solid var(--color-slate-300);
+    border-radius: 8px;
+    outline: none;
+}
+
+textarea {
+    padding: 8px 12px;
+    width: 80%;
+    border: 2px solid var(--color-slate-300);
+    border-radius: 8px;
+    outline: none;
+    resize: none;
+}
+
 /*------------------------------------------------*/
 
 /* ----- MEDIA QUERIES ----- */
