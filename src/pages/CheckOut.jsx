@@ -72,7 +72,7 @@ function CheckOut() {
           </button>
         </form>
 
-        <div>
+        <div className='summary'>
           
           <h3 className='semibold'>Order Summary</h3>
 
@@ -84,8 +84,8 @@ function CheckOut() {
             </div>
           ))}
 
-          <h3>
-            Total: ₹ {Math.round(totalAmount)}
+          <h3 className='totalAmount'>
+            Total: ₹ {Math.round(totalAmount)} /-
           </h3>
         </div>
       </div>
