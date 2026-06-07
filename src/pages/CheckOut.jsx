@@ -1,0 +1,61 @@
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
+import { clearCart } from '../redux/cartSlice'
+import Header from '../components/Header';
+
+function CheckOut() {
+
+  const cartItems = useSelector(
+    (state) => state.cart.items
+  );
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
+  const [message, setMessage] = useState("");
+
+  const totalAmount = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity * 85, 0
+  );
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setMessage("Order placed successfully");
+
+    dispatch(clearCart());
+
+    setTimeout(() => {
+      navigate("/");
+    }, 2000);
+  };
+
+  return (
+    <>
+      <Header/>
+
+      <div>
+
+        <h2>Checkout</h2>
+
+        <form onSubmit={handleSubmit}>
+
+          <input
+            type='text'
+            placeholder='Full Name'
+            required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          
+        </form>
+      </div>
+    </>
+  )
+}
+
+export default CheckOut
