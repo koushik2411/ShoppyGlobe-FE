@@ -25,6 +25,11 @@ function CheckOut() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (cartItems.length === 0) {
+      alert("Order can't be placed. Add items to your cart.")
+      return;
+    }
+
     alert("Order placed successfully");
 
     dispatch(clearCart());
@@ -78,7 +83,7 @@ function CheckOut() {
           <h3 className='semibold'>Order Summary</h3>
 
           {cartItems.map((item) => (
-            <div>
+            <div key={item.id}>
               <p>
                 {item.title} x {item.quantity}
               </p>
