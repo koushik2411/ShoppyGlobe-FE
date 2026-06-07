@@ -3,6 +3,7 @@ import useProducts from "../hooks/useProduct";
 import { useSelector } from "react-redux";
 import ProductItem from "./ProductItem";
 import Loader from "./Loader";
+import { FaStore } from "react-icons/fa";
 
 function ProductList() {
   const { products, loading, error } = useProducts();
@@ -19,7 +20,7 @@ function ProductList() {
 
   return (
     <section className="productsListContainer">
-      <h2 className="secHeader">Products</h2>
+      <h2 className="secHeader">Products <FaStore/></h2>
 
       <div className="productList">
         {filteredProducts.map((product) => (

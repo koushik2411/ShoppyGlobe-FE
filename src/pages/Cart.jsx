@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import Header from '../components/Header';
 import CartItem from '../components/CartItem';
 import { Link } from 'react-router-dom';
+import { FaShoppingCart } from 'react-icons/fa';
 
 function Cart() {
 
@@ -20,13 +21,13 @@ function Cart() {
 
         <div className='cartContainer'>
             
-            <h2 className='secHeader'>Cart</h2>
+            <h2 className='secHeader'>Cart <FaShoppingCart/></h2>
 
             {cartItems.length === 0 ? (
                 <div className='emptyCart'>
                     <h3 className=''>Cart is Empty</h3>
 
-                    <Link>
+                    <Link to="/">
                         <button className='backBtn'>
                             Continue Shopping
                         </button>

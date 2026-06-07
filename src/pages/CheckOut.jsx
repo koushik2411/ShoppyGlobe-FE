@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { clearCart } from '../redux/cartSlice'
 import Header from '../components/Header';
+import { GiTakeMyMoney } from 'react-icons/gi';
 
 function CheckOut() {
 
@@ -39,7 +40,7 @@ function CheckOut() {
 
       <div className='checkoutContainer'>
 
-        <h2 className='secHeader'>Checkout</h2>
+        <h2 className='secHeader'>Checkout <GiTakeMyMoney/></h2>
 
         <form onSubmit={handleSubmit}>
 
