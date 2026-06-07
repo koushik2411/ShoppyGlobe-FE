@@ -48,6 +48,7 @@ header {
 }
 
 .logo {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 24px;
     font-weight: 700;
 }
@@ -391,6 +392,7 @@ textarea {
 }
 
 form button {
+    padding: 8px;
     background: linear-gradient(180deg, var(--color-green-500), var(--color-green-600));
     color: white;
 }
