@@ -2,6 +2,7 @@ import React from "react";
 import useProducts from "../hooks/useProduct";
 import { useSelector } from "react-redux";
 import ProductItem from "./ProductItem";
+import Loader from "./Loader";
 
 function ProductList() {
   const { products, loading, error } = useProducts();
@@ -12,7 +13,7 @@ function ProductList() {
     product.title.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
-  if (loading) return <h2>Loading Products...</h2>;
+  if (loading) return <Loader/>;
 
   if (error) return <h2>Error: {error}</h2>;
 
