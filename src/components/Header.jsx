@@ -1,6 +1,7 @@
 import { FaHome, FaShoppingCart } from "react-icons/fa";
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 function Header() {
 
@@ -16,6 +17,8 @@ function Header() {
         <header className="header">
 
             <h1 className="logo">ShoppyGlobe</h1>
+
+            <SearchBar/>
 
             <nav>
 

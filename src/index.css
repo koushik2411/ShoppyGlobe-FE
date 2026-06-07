@@ -1,6 +1,29 @@
 @import "tailwindcss";
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 /*------------------------------------------------*/
+
 /* Common for all*/
+button {
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+button:hover {
+    scale: 1.03;
+}
+
+button:active {
+    scale: 0.96;
+}
+
+.secHeader {
+    font-size: 20px;
+    font-weight: 700;
+    border-bottom: 2px solid var(--color-slate-500);
+}
+
 /*------------------------------------------------*/
 
 /* ----- HEADER ----- */
@@ -17,7 +40,6 @@ header {
 .logo {
     font-size: 24px;
     font-weight: 700;
-    border-bottom: 2px solid white;
 }
 
 nav {
@@ -51,10 +73,79 @@ nav {
 }
 
 /* ----- SEARCH BAR ----- */
+.searchBar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchInput {
+    padding: 4px 12px;
+    border: 1px solid var(--color-slate-200);
+    background: var(--color-blue-100);
+    border-radius: 24px;
+    outline: none;
+    color: var(--color-slate-800);
+}
+::placeholder {
+    color: var(--color-slate-400);
+}
+
 /* ----- LOADER ----- */
 /* ----- CARD ITEM----- */
 /* ----- PRODUCT ITEM----- */
+.productItemCard {
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    transition: all;
+    transition-duration: 0.2s;
+    background: linear-gradient(180deg, var(--color-slate-50), var(--color-slate-200));
+}
+
+.productItemCard:hover {
+    scale: 1.02;
+    box-shadow: 0px 2px 4px var(--color-blue-400);
+}
+
+.productTitle {
+    font-weight: 500;
+}
+
+.cardBtns {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.viewBtn {
+    background: linear-gradient(135deg, var(--color-amber-300), var(--color-amber-500));
+}
+
+.addToCartBtn {
+    background: linear-gradient(135deg, var(--color-cyan-300), var(--color-cyan-500));
+}
+
 /* ----- PRODUCT LIST ----- */
+.productsListContainer {
+    padding: 12px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.productList {
+    padding: 12px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+}
 
 /*------------------------------------------------*/
 /* ----- HOME PAGE ----- */

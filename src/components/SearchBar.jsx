@@ -6,7 +6,7 @@ function SearchBar() {
     const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className='searchBar'>
 
         <input 
             type='text'
@@ -16,6 +16,7 @@ function SearchBar() {
                 setSearchTerm(e.target.value)
               )
             }
+            className='searchInput'
         />
 
     </div>

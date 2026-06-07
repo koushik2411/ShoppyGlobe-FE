@@ -11,7 +11,7 @@ function ProductItem({ product }) {
     };
 
     return (
-        <div>
+        <div className="productItemCard">
 
             <img 
                 src={product.thumbnail}
@@ -19,21 +19,22 @@ function ProductItem({ product }) {
                 loading="lazy"
             />
 
-            <h3>
+            <h3 className="productTitle">
                 {product.title}
             </h3>
 
-            <p>
-                ₹ {Math.round(product.price * 85)}
+            <p className="">
+                ₹ {Math.round(product.price * 85)} /-
             </p>
 
-            <div>
+            <div className="cardBtns">
                 <Link to={`/product/${product.id}`}>
-                    <button>View Details</button>
+                    <button className="viewBtn">View Details</button>
                 </Link>
 
                 <button
                   onClick={handleAddItem}
+                  className="addToCartBtn"
                 >
                     Add to cart
                 </button>
