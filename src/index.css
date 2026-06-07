@@ -195,7 +195,33 @@ nav {
     justify-content: center;
     align-items: center;
 }
+
+/* ----- NOT FOUND ----- */
+.notFound {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: var(--color-red-50);
+}
+
+.notFound h1 {
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--color-red-600);
+}
+
+.notFound h2 {
+    font-weight: 500;
+    font-size: 32px;
+    color: var(--color-red-600);
+}
+
 /*------------------------------------------------*/
+
 /* ----- MEDIA QUERIES ----- */
 
 /* SMALL SCREEN */
@@ -204,6 +230,7 @@ nav {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
     }
+
     .btnDiv {
         display: flex;
         flex-direction: column;

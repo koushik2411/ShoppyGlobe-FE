@@ -6,7 +6,7 @@ function NotFound() {
     const error = useRouteError();
 
   return (
-    <div>
+    <div className='notFound'>
         <h1>404</h1>
 
         <h2>Page Not Found</h2>
@@ -20,7 +20,7 @@ function NotFound() {
         </p>
 
         <Link to="/">
-            <button>Back to Home</button>
+            <button className='backBtn'>Back to Home</button>
         </Link>
     </div>
   )
