@@ -51,8 +51,47 @@ function CheckOut() {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          
+
+          <input
+            type='email'
+            placeholder='Email'
+            required
+            value={email}
+            onChange={(e) => setName(e.target.value)}
+          />
+
+          <textarea
+            placeholder='Address'
+            required
+            value={address}
+            onChange={(e) => setName(e.target.value)}
+          />
+
+          <button type='submit'>
+            Place Order
+          </button>
         </form>
+
+        <div>
+          
+          <h3>Order Summary</h3>
+
+          {cartItems.map((item) => (
+            <div>
+              <p>
+                {item.title} x {item.quantity}
+              </p>
+            </div>
+          ))}
+
+          <h3>
+            Total: ₹ {Math.round(totalAmount)}
+          </h3>
+        </div>
+
+        {message && (
+          <h3>{message}</h3>
+        )}
       </div>
     </>
   )
