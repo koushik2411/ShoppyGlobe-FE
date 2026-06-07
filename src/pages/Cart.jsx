@@ -23,9 +23,15 @@ function Cart() {
             <h2 className='secHeader'>Cart</h2>
 
             {cartItems.length === 0 ? (
-                <h3 className='emptyCart'>
-                    Cart is Empty
-                </h3>
+                <div className='emptyCart'>
+                    <h3 className=''>Cart is Empty</h3>
+
+                    <Link>
+                        <button className='backBtn'>
+                            Continue Shopping
+                        </button>
+                    </Link>
+                </div>
             ) : (
                 <div className='cartList'>
                     {cartItems.map((item) => (

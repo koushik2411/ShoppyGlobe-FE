@@ -332,6 +332,15 @@ nav {
 }
 
 .emptyCart {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+.emptyCart h3 {
     color: var(--color-red-600);
     font-weight: 700;
     font-size: 24px;
