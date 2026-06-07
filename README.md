@@ -1,16 +1,42 @@
-# React + Vite
+# ShoppyGlobe - an e-commerce application
+A React-based e-commerce application built using React, React Router, and Redux Toolkit. Users can browse products, search products, view product details, manage their cart, and proceed to checkout.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+* Product listing from API
+* Product detail page
+* Search functionality
+* Add products to cart
+* Remove products from cart
+* Increase/Decrease quantity
+* Cart total calculation
+* Checkout page
+* Dynamic routing
+* Redux Toolkit state management
+* Loading state handling
+* Error handling
+* Lazy loading with React.lazy and Suspense
+* Custom loader component
+* Responsive UI
+* 404 Not Found page
 
-Currently, two official plugins are available:
+## Tech Stack
+* React
+* React Router DOM
+* Redux Toolkit
+* React Redux
+* Vite
+* CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Installation
+* Clone the repository: (git clone https://github.com/koushik2411/ShoppyGlobe-FE)
+* Install dependencies: (npm install)
+* Run the development server: (npm run dev)
+* Build for production: (npm run build)
+* Preview production build: (npm run preview)
 
-## React Compiler
+## API Used
+DummyJSON Products API (https://dummyjson.com/products)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Redux Toolkit used for State Management
+* Cart management
+* Search functionality
